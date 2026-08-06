@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="customer-service" />
+        <module name="gateway-service" />
+        <module name="proto" />
+        <module name="case-service" />
+        <module name="history-service" />
+        <module name="collaboration-service" />
+        <module name="notification-service" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="case-service" options="-parameters" />
+      <module name="collaboration-service" options="-parameters" />
+      <module name="customer-service" options="-parameters" />
+      <module name="gateway-service" options="-parameters" />
+      <module name="history-service" options="-parameters" />
+      <module name="notification-service" options="-parameters" />
+      <module name="proto" options="-parameters" />
+    </option>
+  </component>
+</project>
