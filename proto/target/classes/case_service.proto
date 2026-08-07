@@ -1,0 +1,68 @@
+syntax = "proto3";
+
+package com.sentinelhub.case_service;
+
+option java_multiple_files = true;
+option java_package = "com.sentinelhub.grpc.case_service";
+option java_outer_classname = "CaseServiceProto";
+
+import "google/protobuf/timestamp.proto";
+
+enum CasePriority {
+  PRIORITY_UNSPECIFIED = 0;
+  LOW = 1;
+  MEDIUM = 2;
+  HIGH = 3;
+  CRITICAL = 4;
+}
+
+enum CaseStatus {
+  STATUS_UNSPECIFIED = 0;
+  OPEN = 1;
+  IN_PROGRESS = 2;
+  PENDING_REVIEW = 3;
+  RESOLVED = 4;
+  CLOSED = 5;
+}
+
+message CreateCaseRequest {
+  string title = 1;
+  string description = 2;
+  string customer_id = 3;
+  CasePriority priority = 4;
+  string created_by_analyst_id = 5;
+}
+
+message CaseResponse {
+  string case_id = 1;
+  string title = 2;
+  string description = 3;
+  string customer_id = 4;
+  CasePriority priority = 5;
+  CaseStatus status = 6;
+  string assigned_analyst_id = 7;
+  google.protobuf.Timestamp created_at = 8;
+  google.protobuf.Timestamp updated_at = 9;
+}
+
+message GetCaseRequest {
+  string case_id = 1;
+}
+
+message UpdateCaseStatusRequest {
+  string case_id = 1;
+  CaseStatus status = 2;
+  string updated_by = 3;
+}
+
+message AssignCaseRequest {
+  string case_id = 1;
+  string analyst_id = 2;
+}
+
+service CaseService {
+  rpc CreateCase (CreateCaseRequest) returns (CaseResponse);
+  rpc GetCase (GetCaseRequest) returns (CaseResponse);
+  rpc UpdateCaseStatus (UpdateCaseStatusRequest) returns (CaseResponse);
+  rpc AssignCase (AssignCaseRequest) returns (CaseResponse);
+}
