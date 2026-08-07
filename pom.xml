@@ -22,7 +22,7 @@
     <modules>
         <module>proto</module>
         <module>gateway-service</module>
-        <module>case-service</module>
+        <module>caseService</module>
         <module>customer-service</module>
         <module>history-service</module>
         <module>collaboration-service</module>
