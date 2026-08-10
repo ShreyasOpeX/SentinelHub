@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: gateway-service
+
+grpc:
+  client:
+    case-service:
+      address: static://localhost:9090
+      negotiationType: plaintext
