@@ -1,0 +1,3 @@
+com\sentinelhub\gateway\client\CaseGrpcClient.class
+com\sentinelhub\gateway\controller\CaseController.class
+com\sentinelhub\gateway\GatewayServiceApplication.class
