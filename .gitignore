@@ -1,0 +1,29 @@
+# Maven build output (all modules)
+**/target/
+
+# Java and Spring Boot runtime files
+*.class
+*.log
+*.pid
+*.pid.lock
+*.hprof
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+**/application-local.yml
+**/application-local.yaml
+
+# IDE configuration
+.idea/
+*.iml
+*.ipr
+*.iws
+.project
+.classpath
+.settings/
+
+# OS-generated files
+.DS_Store
+Thumbs.db

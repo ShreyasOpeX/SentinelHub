@@ -1,0 +1,8 @@
+# Maven build output
+target/
+
+# Local service configuration and runtime files
+application-local.yml
+application-local.yaml
+*.log
+*.pid
